@@ -1,0 +1,17 @@
+<h1>Benefits Verification Search</h1>
+
+<% form_remote_tag :url => '/search' do -%>
+<fieldset class="form">
+	<div>
+	<%= label_tag :patient_Name, "Name" %>
+	<%= text_field_tag :patient_Name, nil, {:size => "20"} %>
+	</div>
+	<div>
+	<%= label_tag :date %>
+	<%= date_select :date, nil, {:order => [:month, :day, :year], :prompt => {:month => "Month", :day => "Day", :year => "Year"}} %>
+	</div>
+	<div><%= submit_tag "Search" %>
+</fieldset>
+<% end %>
+
+<%= render :partial => 'search_results' %>

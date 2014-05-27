@@ -1,0 +1,34 @@
+<div id="results">
+<table id="results_table" cellspacing="0" cellpadding="10" align="center">
+  <tr>
+  	<th>Name</th>
+    <th>Date</th>
+	  <th>Payment Type</th>
+    <th>Amount Due</th>
+    <th>Office</th>
+    <th>Active</th>
+    <th>Edit</th>
+    <th>Delete</th>
+	</tr>
+<% i = 1
+	 for benefit in @benefits %>
+    <tr id="benefit_<%= benefit.id %>">
+    	<td><%= link_to benefit.patient_Name, benefit_path(benefit) %></td>
+      <td><%= format_date(benefit.date) %></td>
+			<td><%= benefit.payment_type %></td>
+			<td align="center"><%= number_with_precision(benefit.amount_Due, :precision => 2) %></td>
+			<td><%= benefit.office.office %></td>
+			<td><%= benefit.active ? "Active" : "Inactive" %></td>
+			<td><button type="button" onclick="window.location='<%= url_for(edit_benefit_path(benefit)) %>'">Edit</button></a></td>
+			<td><%= link_to_remote '<button type="button" class="button">Delete</button>', :url => benefit_url(benefit), :method => :delete, :confirm => 'Are you sure?', :complete => "removeTableRow('results_table',#{i})" %></td>
+    </tr>
+<%   i += 1
+   end %>
+</table>
+
+<br/>
+<div class="pagination_wrapper">
+	<%= will_paginate @benefits, :remote => true %>
+</div>
+
+</div>

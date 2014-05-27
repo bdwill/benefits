@@ -1,0 +1,22 @@
+<h1>Benefits Verification</h1>
+
+<br/><br/>
+
+<fieldset class="options_list">
+	<legend>Browse Active Benefits by Office</legend>
+	<div class="options_wrapper">
+		<span class="left_option"><button type="button" onclick="window.location='<%= url_for(:action => 'list_active', :id => 2)%>'">Uptown Active</button></span>
+		<span class="middle_option"><button type="button" onclick="window.location='<%= url_for(:action => 'list_active', :id => 1)%>'">Metairie Active</button></span>
+		<span class="right_option"><button type="button" onclick="window.location='<%= url_for(:action => 'list_active', :id => 3)%>'">Westbank Active</button></span>
+	</div>
+</fieldset>
+
+<br/><br/>
+
+<fieldset class="options_list">
+	<legend>Benefits Tasks</legend>
+	<div class="options_wrapper">
+		<span class="left_option"><button type="button" onclick="window.location='<%= url_for(new_benefit_path) %>'">Add Record</button></span>
+		<span class="middle_option"><button type="button" onclick="window.location='<%= url_for(:controller => 'search') %>'">Search</button></span>
+	</div>
+</fieldset>

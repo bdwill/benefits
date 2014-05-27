@@ -1,0 +1,161 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+	text-align: center;
+}
+
+table, td, th { border: 1px solid #666666; }
+th { background-color: #E8E8E8; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:active {text-decoration: none}
+a:hover {text-decoration: none;}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+fieldset.options_list {
+	text-align: left;
+	width: 550px;
+	margin: 0 auto 0 auto;
+	border: 1px solid #666666;
+}
+
+div.options_wrapper { margin: 10px 20px 10px 20px;}
+
+.left_option { margin: 0px 20px 0px 0px; }
+.middle_option { margin: 0px 20px 0px 20px; }
+.right_option { margin: 0px 0px 0px 20px; }
+
+fieldset.form {
+	text-align: left;
+	width: 600px;
+	margin: 0 auto 0 auto;
+	padding-left: 10px;
+	border: 1px solid #666666;
+}
+
+fieldset.login_form {
+	text-align: center;
+	width: 400px;
+	margin: 0 auto 0 auto;
+	padding-left: 10px;
+	border: 1px solid #666666;
+}
+
+fieldset.inner_form {
+	text-align: left;
+	width: 575px;
+	margin: 0 auto 0 auto;
+	padding-left: 10px;
+	border: 1px solid #666666;
+}
+
+.form div, .login_form div, .inner_form div { margin: 10px 0px; }
+
+div.pagination_wrapper { 
+	margin: auto;
+	width: 600px;
+}
+
+.pagination {
+  background: white;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD; }
+  .pagination span.current {
+    font-weight: bold;
+    background: #666666;
+    color: white;
+    border: 1px solid #666666; }
+  .pagination a {
+    text-decoration: none;
+    color: #666666;
+    border: 1px solid #666666; }
+    .pagination a:hover, .pagination a:focus {
+      color: #383838;
+      border-color: #383838; }
+  .pagination .page_info {
+    background: #666666;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #003;
+      background: #6aa6ed;
+      padding: .1em .25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child+html .pagination {
+    overflow: hidden; }
+
+		div.comment {
+			margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto;
+			padding: 0; text-align: left; width: 575px;
+		}
+
+		div.comment_author {
+			border: none; float: left; margin: 0; padding: 0 0 10px 0; width: 175px;
+		}
+
+		div.comment_text {
+			border: none; float: right; margin: 0; padding: 0; width: 400px;
+		}
+

@@ -1,0 +1,12 @@
+<b>Add Comment:</b>
+<% form_remote_tag :url => create_comment_benefit_url(@benefit), :complete => "hideCommentForm()" do %>
+<fieldset class="inner_form">
+	<div>
+		<%= text_area_tag :comment, @comment.comment, { :cols => 70, :rows => 5 } %>
+	</div>
+	<div>
+		<%= submit_tag "Create Comment" %>
+		<button type="button" onclick="hideCommentForm()">Cancel</button>
+	</div>
+</fieldset>
+<% end %>

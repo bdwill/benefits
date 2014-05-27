@@ -1,0 +1,21 @@
+<%= form.error_messages %>
+
+<div>
+<%= form.label :name, "Full Name" %>
+<%= form.text_field :name, { :size => 20 } %>
+</div>
+
+<div>
+<%= form.label :login, "Username" %>
+<%= form.text_field :login, { :size => 20 } %>
+</div>
+
+<div>
+<%= form.label :password, form.object.new_record? ? nil : "Change password" %>
+<%= form.password_field :password, { :size => 20 } %>
+</div>
+
+<div>
+<%= form.label :password_confirmation %>
+<%= form.password_field :password_confirmation, { :size => 20 } %>
+</div>

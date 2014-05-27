@@ -1,0 +1,7 @@
+<table>
+    <% benefit.class.searchable_fields.each do |field| %>
+        <tr> 
+		<th><%= field.to_s %></th> 
+			<td><%= benefit.send(field) %></td> 
+		</tr>
+ </table> 

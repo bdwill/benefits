@@ -1,0 +1,22 @@
+<fieldset id="comments" class="inner_form">
+	<legend><b>Comments</b></legend>
+<% if @benefit.comments.size > 0 
+		i = 0 %>
+<% for comment in @benefit.comments do %>
+	<% if (i > 0) %>
+	<hr/>
+	<% end %>
+	<div class="comment">
+		<div class="comment_author">
+			<%= comment.user.name %><br/>
+			<%= format_datetime(comment.created_at) %>
+		</div>
+		<div class="comment_text"><%= comment.comment %></div>
+	</div>
+	<div style="clear: both;"><!-- --></div>
+<% 	i += 1
+	 end %>
+<% else %>
+	<div><i>There are no comments.</i></div>
+<% end %>
+</fieldset>

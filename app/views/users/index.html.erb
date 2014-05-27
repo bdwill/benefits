@@ -1,0 +1,23 @@
+<h1>Listing Users</h1>
+
+<table id="results_table" cellspacing="0" cellpadding="10" align="center">
+  <tr>
+		<th>Full Name</th>
+		<th>Username</th>
+		<th>Edit</th>
+  </tr>
+
+<% i = 1
+	 @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+		<td><%= user.login %></td>
+		<td><button type="button" onclick="window.location='<%= url_for(edit_user_path(user)) %>'">Edit</button></a></td>
+  </tr>
+<%   i += 1
+	 end %>
+</table>
+
+<br />
+
+<button type="button" onclick="window.location='<%= url_for(new_user_path) %>'">New User</button></a>

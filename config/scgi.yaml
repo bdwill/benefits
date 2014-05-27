@@ -1,0 +1,9 @@
+--- 
+:disable_signals: true
+:password: 7LVx4gQlng73o
+:control_url: druby://127.0.0.1:8999
+:config: config/scgi.yaml
+:host: 127.0.0.1
+:env: development
+:port: 1026
+:logfile: log/scgi.log

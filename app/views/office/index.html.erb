@@ -1,0 +1,27 @@
+<h1>Listing Offices</h1>
+
+<table cellspacing="0" cellpadding="10" align="center">
+  <tr>
+  <% for column in Office.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+		<th>View</th>
+		<th>Edit</th>
+		<th>Delete</th>
+  </tr>
+  
+<% for office in @offices %>
+  <tr>
+  <% for column in Office.content_columns %>
+    <td><%=h office.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', office_path(office) %></td>
+    <td><%= link_to 'Edit', edit_office_path(office) %></td>
+    <td><%= link_to 'Destroy', office, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New office', new_office_path %>

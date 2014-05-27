@@ -1,0 +1,20 @@
+<h1>Benefits Verification</h1>
+ 
+<% form_for @user_session, :url => user_session_path do |f| %>
+  <fieldset class="login_form">
+	<%= f.error_messages %>
+  <div>
+	<%= f.label :login, "Username" %>
+  <%= f.text_field :login, { :size => 20 } %>
+  </div>
+	<div>
+  <%= f.label :password %>
+  <%= f.password_field :password, { :size => 20 } %>
+  </div>
+  <%= f.submit "Login" %>
+	</fieldset>
+<% end %>
+
+<script type="text/javascript">
+	document.getElementById('user_session_login').focus();
+</script>
