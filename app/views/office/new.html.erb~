@@ -1,0 +1,11 @@
+<h1>New Office</h1>
+
+<%= form_for(@office) do |f| %>
+	<fieldset class="form">
+	<%= render :partial => "form", :object => f %>
+  <div>
+		<%= f.submit "Create" %>
+		<button type="button" onclick="window.location='<%= url_for(offices_path) %>'">Cancel</button></a>
+	</div>
+	</fieldset>
+<%= end %>

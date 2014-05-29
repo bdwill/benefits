@@ -17,7 +17,7 @@
 	<div style="float:right">
 		Logged in as <%= current_user.name %>
 		<button type="button" onclick="window.location='<%= url_for(benefits_path) %>'">Home</button>
-	  <%= link_to '<button type="button">Logout</button>', user_session_path, :method => :delete %>
+	  <%= button_to "Logout", user_sessions_path, action: "delete" %>
 	</div>
 	<br/>
 	<% end %>

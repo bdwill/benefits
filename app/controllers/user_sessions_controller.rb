@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
     @page_title = "Benefits Verification Login"
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_back_or_default benefits_url
+      redirect_to :controller => 'verify', :action => 'index'
     else
       render :action => :new
     end
@@ -24,6 +24,6 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "You have been logged out."
-    redirect_back_or_default new_user_session_url
+    redirect_to :controller => 'user_sessions', :action => 'new'
   end
 end

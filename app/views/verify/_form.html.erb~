@@ -1,0 +1,36 @@
+<div>
+<%= form_for @benefit do |f| %>
+  <% if @benefit.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@benefit.errors.count, "error") %> prohibited:</h2>
+    <ul>
+      <% @benefit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<div>
+<%= form.label :patient_Name, "Name" %>
+<%= form.text_field :patient_Name, {:tabindex => "1", :size => "20"} %>
+</div>
+
+<div>
+<%= form.label :date, "Date of Procedure" %>
+<%= form.date_select :date, {:order => [:month, :day, :year]} %>
+</div>
+
+<div>
+<%= form.label :payment_type %>
+<%= form.select :payment_type, ["Co-Pay", "Deductible"], {:include_blank => "Select"}, {:tabindex => "5"} %>
+</div>
+
+<div>
+<%= form.label :amount_Due %>
+<%= form.text_field :amount_Due, {:tabindex => "6", :size => "10"} %>
+</div>
+
+<div>
+<%= form.label :office_id, "Office" %>
+<%= form.select :office_id, @offices.collect {|o| [ o.office, o.id ] }, {:include_blank => false}, {:tabindex => "7"} %>
+</div>
+

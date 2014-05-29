@@ -1,0 +1,32 @@
+<h1>Detailed Benefit Information</h1>
+
+<fieldset class="form">
+	<!-- <div><b>Name:</b>  @benefit.patient_Name </div> -->
+	<div><b>Date of Procedure:</b> <%= format_date(@benefit.date) %></div>
+	<div><b>Payment Type:</b> <%= @benefit.payment_type %></div>
+	<div><b>Amount Due:</b> <%= number_to_currency(@benefit.amount_Due) %></div>
+	<div><b>Office:</b> <%= @benefit.office.office %></div>
+	<% unless @benefit.active -%>
+	<div><b>Signoff:</b> <%= @benefit.user.name %></div>
+	<div><b>Signoff Date:</b> <%= format_datetime(@benefit.signoff_date) %></div>
+	<% end -%>
+	<%= render :partial => 'comments' %>
+	<br/>
+	<div id="comment_form">
+	</div>
+	<div class="options_wrapper">
+		<span class="left_option">
+			<%= link_to_remote('<button type="button">Add Comment</button>', :update => "comment_form",
+			    :url  => display_comment_form_benefit_url(@benefit), :method => :get ) %>
+		</span>
+		<span class="middle_option">
+			<% if @benefit.active -%>
+			<%= link_to('<button type="button">Sign Off</button>', {:action => 'signoff', :id => @benefit.id}, :method => :get, :confirm => "Are you sure you wish to sign off?") %>
+			<% else -%>
+			<button type="button" class="button" disabled="disabled">Sign Off</button>
+			<% end -%>
+		</span>
+		<span class="middle_option"><button type="button" onclick="window.location='<%= url_for(edit_benefit_path(@benefit)) %>'">Edit Information</button></span>
+		<span class="right_option"><%= link_to '<button type="button">Delete</button>', @benefit, :confirm => 'Are you sure?', :method => :delete %></span>
+	</div>
+</fieldset>

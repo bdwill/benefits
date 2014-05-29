@@ -21,8 +21,8 @@ class VerifyController < ApplicationController
   end
 
   def show
-    @benefit = Benefit.find(params[:id], :include => [:office, :comments])
-    @page_title = "Detailed Benefit Information :: #{@benefit.patient_Name}"
+    @benefit = Benefit.find_by office_id: @office
+    #@page_title = "Detailed Benefit Information :: #{@benefit.patient_Name}"
   end
 
   def new
@@ -35,7 +35,7 @@ class VerifyController < ApplicationController
     @benefit = Benefit.new(params[:benefit])
     if @benefit.save
       flash[:notice] = 'Benefit was successfully created.'
-      redirect_to benefits_path
+      redirect_to verify_path
     else
       @page_title = "Add Record"
       @offices = Office.find(:all)

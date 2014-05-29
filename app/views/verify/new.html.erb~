@@ -1,0 +1,11 @@
+<h1>Add Record</h1>
+
+<% form_for(@benefit) do |f| %>
+  <fieldset class="form">
+	<%= render :partial => "form", :object => f %>
+  <div>
+		<%= f.submit "Create" %>
+		<button type="button" onclick="javascript:history.go(-1)">Cancel</button>
+	</div>
+	</fieldset>
+<% end %>
